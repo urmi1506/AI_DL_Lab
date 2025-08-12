@@ -1,8 +1,9 @@
-package Graph;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
 
-import java.util.*;
-public class EightPuzzle {
-
+public class EightPuzzleBFS {
     static final String GOAL = "123456780"; 
     
     static int[][] moves = {
@@ -67,5 +68,4 @@ public class EightPuzzle {
         System.out.println(solve(start));
     }
 }
-
 
