@@ -2,11 +2,7 @@ package Assignment_4;
 
 import java.util.*;
 
-/**
- * A* Pathfinding Algorithm Implementation
- * Time Complexity: O(b^d) where b is branching factor, d is depth
- * Space Complexity: O(b^d)
- */
+
 public class AStarAlgo {
     
     static class Node implements Comparable<Node> {
@@ -147,7 +143,6 @@ public class AStarAlgo {
         System.out.println("* = Path");
         System.out.println();
         
-        // Create display matrix
         char[][] display = new char[grid.length][grid[0].length];
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
@@ -155,13 +150,11 @@ public class AStarAlgo {
             }
         }
         
-        // Mark path (excluding start and end)
         for (int i = 1; i < path.size() - 1; i++) {
             Node node = path.get(i);
             display[node.x][node.y] = '*';
         }
         
-        // Mark start and end
         if (!path.isEmpty()) {
             Node start = path.get(0);
             Node end = path.get(path.size() - 1);
@@ -169,7 +162,6 @@ public class AStarAlgo {
             display[end.x][end.y] = 'E';
         }
         
-        // Print grid with coordinates
         System.out.print("    ");
         for (int j = 0; j < grid[0].length; j++) {
             System.out.printf("%2d ", j);
